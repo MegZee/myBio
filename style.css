@@ -508,32 +508,108 @@ a {
     font-size: 0.9rem;
 }
 
-/* Collaborators Grid */
-.collaborators-grid {
+/* Split Layout */
+.split-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    max-width: 900px;
-    margin: 0 auto;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
 }
 
-.collaborator-item {
-    background: var(--card-bg);
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    text-align: center;
-    font-weight: 500;
+.main-column {
+    min-width: 0;
+    /* Prevents grid blowout */
+}
+
+.side-column {
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar-section {
+    margin-bottom: 3rem;
+}
+
+.sidebar-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
     color: var(--text-primary);
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Collaborators Cloud */
+.collaborators-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.collaborators-cloud span {
+    background: var(--bg-secondary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
-.collaborator-item:hover {
+.collaborators-cloud span:hover {
     border-color: var(--accent);
-    background: rgba(37, 99, 235, 0.05);
+    color: var(--accent);
+    background: #fff;
 }
 
-/* Responsive */
+/* Compact Teaching */
+.teaching-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.teaching-item-compact {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.teaching-item-compact h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+    color: var(--text-primary);
+}
+
+.teaching-item-compact .role {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.teaching-item-compact .desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+/* Responsive Split */
+@media (max-width: 900px) {
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .side-column {
+        position: static;
+    }
+}
+
+/* Responsive General */
 @media (max-width: 768px) {
     h1 {
         font-size: 2.5rem;
