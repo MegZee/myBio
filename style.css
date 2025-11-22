@@ -236,7 +236,7 @@ a {
 
 /* Sections */
 .section {
-    padding: 6rem 0;
+    padding: 4rem 0;
 }
 
 .bg-secondary {
@@ -371,6 +371,93 @@ a {
     font-size: 0.9rem;
     color: var(--text-secondary);
     font-style: italic;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.citations {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+    background: rgba(37, 99, 235, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+/* Demos Grid */
+.demos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.demo-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.demo-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.demo-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.demo-card p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.demo-card .btn-secondary {
+    margin-top: 1rem;
+}
+
+/* Teaching Experience */
+.teaching-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.teaching-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.teaching-item:last-child {
+    border-bottom: none;
+}
+
+.teaching-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.teaching-role {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.teaching-item p:last-child {
+    margin-bottom: 0;
+}
+
+/* Project Card spacing for multiple cards */
+.project-card+.project-card {
+    margin-top: 2rem;
 }
 
 /* Contact / Footer */
@@ -413,6 +500,31 @@ a {
     border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
     font-size: 0.9rem;
+}
+
+/* Collaborators Grid */
+.collaborators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.collaborator-item {
+    background: var(--card-bg);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.collaborator-item:hover {
+    border-color: var(--accent);
+    background: rgba(37, 99, 235, 0.05);
 }
 
 /* Responsive */
