@@ -13,17 +13,49 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-            navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1)';
         } else {
-            navbar.style.background = 'rgba(15, 23, 42, 0.9)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.9)';
             navbar.style.boxShadow = 'none';
         }
     });
 
+    // Scroll Spy for Active Navigation Link
+    const sections = document.querySelectorAll('section, header');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+
+            // Offset by nav height (approx 80px) + some buffer
+            if (pageYOffset >= (sectionTop - 150)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        // Handle the "Home" case if the header doesn't have an ID or if at the very top
+        if (pageYOffset < 100) {
+            // Remove active from all if at top, or set to home if you had a home link
+            // In this case, we might want to clear selection or select "About" if it's the first visible
+        }
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
+
     // Intersection Observer for fade-in animations
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -31,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target); // Only animate once
             }
         });
     }, observerOptions);
