@@ -56,8 +56,10 @@ h2.section-title {
 p {
     color: var(--text-secondary);
     margin-bottom: 1rem;
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 1.05rem;
+    /* Slightly larger for better readability */
+    line-height: 1.75;
+    /* Improved line height */
 }
 
 a {
@@ -316,8 +318,9 @@ a {
 }
 
 .project-card:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.05);
     border-color: var(--accent);
+    transform: translateY(-2px);
 }
 
 .project-role {
@@ -651,5 +654,33 @@ a {
         height: 3px;
         background-color: var(--text-primary);
         margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+    /* Mobile Menu Active State */
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--border-color);
+        gap: 1.5rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
