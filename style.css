@@ -40,14 +40,14 @@ h3 {
 }
 
 h1 {
-    font-size: 3rem;
-    margin-bottom: 0.75rem;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
     color: #0f172a;
 }
 
 h2.section-title {
     font-size: 1.75rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     text-align: center;
     position: relative;
     font-weight: 600;
@@ -149,6 +149,7 @@ a {
     font-weight: 500 !important;
     display: inline-block;
     box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1), 0 2px 4px -1px rgba(37, 99, 235, 0.06);
+    text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -182,18 +183,18 @@ a {
 
 /* Hero Section */
 .hero {
-    min-height: auto;
+    min-height: 75vh;
     display: flex;
     align-items: center;
-    padding-top: calc(var(--nav-height) + 2rem);
+    padding-top: var(--nav-height);
     padding-bottom: 2rem;
     position: relative;
 }
 
 .hero-content {
     display: grid;
-    grid-template-columns: 1.4fr 0.6fr;
-    gap: 2rem;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 3rem;
     align-items: center;
     width: 100%;
 }
@@ -211,7 +212,7 @@ a {
 .hero-buttons {
     display: flex;
     gap: 1rem;
-    margin-top: 1.25rem;
+    margin-top: 2rem;
 }
 
 /* Hero Visual (Profile Photo) */
@@ -223,8 +224,8 @@ a {
 
 .image-container {
     position: relative;
-    width: 220px;
-    height: 220px;
+    width: 280px;
+    height: 280px;
 }
 
 .profile-photo {
@@ -239,7 +240,7 @@ a {
 
 /* Sections */
 .section {
-    padding: 2rem 0;
+    padding: 3rem 0;
 }
 
 .bg-secondary {
@@ -250,7 +251,7 @@ a {
 .about-grid {
     display: grid;
     grid-template-columns: 1.6fr 0.9fr;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: start;
 }
 
